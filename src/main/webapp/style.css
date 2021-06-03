@@ -1,0 +1,57 @@
+@charset "ISO-8859-1";
+
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url("new1.jpg");
+	background-size: cover;
+	background-position: center;
+	font-family: sans-serif;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	cursor: pointer;
+	background: #39dc79;
+	color: #000;
+}
+
+a {
+	background-color: #4CAF50;
+	color: white;
+	padding: 2px;
+}
+
+.main-nav {
+	float: right;
+	list-style: none;
+	margin-top: 30px;
+}
+
+.main-nav li {
+	display: inline-block;
+}
+
+.main-nav li a {
+	color: white;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: "Roboto", sans-serif;
+	font-size: 15px;
+}
+
+.main-nav li.active a {
+	border: 1px solid white;
+}
+
+.main-nav li a:hover {
+	border: 1px solid white;
+}
