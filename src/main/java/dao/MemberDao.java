@@ -8,4 +8,6 @@ public interface MemberDao {
 
 	void registerMember(List<Member> mb);
 
+	List<Member> getDataMembers();
+
 }

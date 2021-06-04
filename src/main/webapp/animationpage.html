@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Animations</title>
+<link rel="stylesheet" type="text/css" href="./animations.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+.test {
+	color: blue;
+	font-size: 20px;
+}
+
+#newbtn, #newbtn1 {
+	background-color: #008CBA;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<div class="pixel">
+		<p>Welcome to the Membership Platform Page</p>
+	</div>
+
+	<div class="membership">
+		<span data-title="The plan starts from Rs1000!">Membership Plan</span>
+		<span data-title="Rajajinagar, 5th block, Bangalore!">Place</span> <span
+			data-title="Goto Membership portal at www.membership.com">How
+			to Apply</span> <span
+			data-title="Can access all the different features of the program!">Benefits
+			of Membership</span>
+	</div>
+	<div class="space"></div>
+	<div class="para">
+		<p>A membership program should be seen as an accelerant for work
+			you must do.2 That is, it should be born from the desire for creative
+			autonomy and for an untethered opportunity to explore with great
+			curiosity and rigor, topics that may or may not be explicitly
+			“commercially” friendly. I harbor no illusions — it’s unlikely for a
+			magazine or publisher to bankroll a thirty-day walk from Tokyo to
+			Kyoto along an old highway, chatting up nearly-dead barbers and
+			looking to place 200-year-old woodblock prints by Hiroshige in
+			conversation with the road of today. Sure, you can cover a small bit
+			of the walk with a magazine commission, but to take the bigger risk
+			of months of research, action, and follow up, you need a more durable
+			foundation. This is where membership programs soar — they are
+			implicit and durable permission machines. Implicit in that the
+			support itself is a signal, and durable in that those signals are
+			“distributed.” Permission via members is an assemblage of diffuse
+			permissions, indie permissions, not a kingmaker bestowing some
+			canonical singular permission. Creatively, I find this arrangement
+			freeing. In praxis it has led to bigger, more audacious and ambitious
+			projects than I would have attempted on my own. There is, however, a
+			bargain to be struck. Namely: You must work. Perhaps harder than
+			you’ve worked at any other job. A promise is made. You are granted
+			permission by your members and in return you must work with an energy
+			such that no question remains that your promise of rigor and
+			curiosity are present in your output. I don’t think of this bargain
+			as being “beholden” to members. I think of this bargain as a
+			formalization, and, boy does it help me get work done. I find that by
+			“formalizing” a newsletter, for example, I write more and better
+			newsletters. By “formalizing” a walk, I walk with a sharper eye, open
+			to more finely-grained details, with a greater empathy for those I
+			meet along the road, and with an ever-stronger impulse to transmute
+			those encounters into something much larger than the moment itself.</p>
+	</div>
+
+
+	<center>
+		<p class="test">Make your Life easy with Membership</p>
+		<button id="newbtn">Hide</button>
+		<button id="newbtn1">Show</button>
+	</center>
+	<div class="pixel">
+		<p>Copyright © 2003-2021 JustAnswer LLC. All rights reserved.
+			Contact us</p>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			$("#newbtn").click(function() {
+				$(".test").hide();
+			});
+			$("#newbtn1").click(function() {
+				$(".test").show();
+			});
+		});
+	</script>
+
+
+</body>
+</html>

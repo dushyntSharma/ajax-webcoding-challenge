@@ -32,6 +32,23 @@ div {
   height: 100px;
    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
   transition: width 2s, height 4s;
+    position: relative;
+  animation: mymove 5s infinite;
+  
+}
+.divnew{
+  width: 100px;
+  height: 100px;
+   background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+  transition: width 2s, height 4s;
+}
+
+@keyframes mymove {
+  0%   {top: 0px; left: 0px; background: red;}
+  25%  {top: 0px; left: 100px; background: blue;}
+  50%  {top: 100px; left: 100px; background: yellow;}
+  75%  {top: 100px; left: 0px; background: green;}
+  100% {top: 0px; left: 0px; background: red;}
 }
 
 div:hover {
@@ -46,9 +63,13 @@ div:hover {
 	</button>
 	<h1>Take the MemberShip</h1>
 	<p>If you take the membership once it is valid for a long time</p>
-	<div>
-		The Premium membership for a parent includes access for an entire family's children across all grades, and for a teacher, it allows access for up to 35 students. 
+		<div >
+		The Premium membership for a parent includes access for an entire family's children across all grades, and for a teacher, it allows access for up to 35 students.
+		</div>
+		<center> 
 		<div>
-			<p>It is one of the Jsp based project</p>
+			<p>It is one of the Jsp-Servlet based project</p>
+			</div>
+			</center>
 </body>
 </html>

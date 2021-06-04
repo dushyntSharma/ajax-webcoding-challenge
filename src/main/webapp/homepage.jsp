@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -17,16 +18,27 @@
 .btn btn-primary {
 	text-color: black;
 }
+
+p:before {
+	content: 'Fetching Data from Databse';
+}
+
+p.red:before {
+	color: red;
+}
 </style>
 </head>
 
 <body>
 	<button type="button" class="btn btn-outline-success">
-		<a href="register.jsp">Back</a>
+		<a href='<c:url value="/register.jsp"/>'>Back</a>
 	</button>
 	<center>
 		<button type="button" class="btn btn-outline-success">
-			<a href="aboutus.html">About US</a>
+			<a href='<c:url value="/aboutus.html"/>'> About US</a>
+		</button>
+		<button type="button" class="btn btn-outline-success">
+			<a href='<c:url value="/animationpage.html"/>'> CSS3 Animations</a>
 		</button>
 	</center>
 
@@ -50,7 +62,6 @@
 		</tbody>
 	</table>
 	<script type="text/javascript" src="json.js"></script>
-
 
 </body>
 </html>

@@ -24,28 +24,6 @@ public class RegisterMember extends HttpServlet {
 
 	static MemberDao dao = new MemberDaoImpl();
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public RegisterMember() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -66,7 +44,7 @@ public class RegisterMember extends HttpServlet {
 
 			Member member = new Member(firstname, lastname, email, address, gender, mobile, password, cpassword);
 			List<Member> mb = new ArrayList<Member>();
-			System.out.println(mb.toString());
+			// System.out.println(mb.toString());
 			mb.add(member);
 			try {
 				dao.registerMember(mb);

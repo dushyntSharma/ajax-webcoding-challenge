@@ -54,14 +54,14 @@ form {
 			<div class="form-group col-md-6">
 				<label for="inputEmail4"></label> <input type="text"
 					class="form-control" id="gender" placeholder="Gender"> <span
-					class="error_form" id="namecheck"></span>
+					class="error_form" id="gendercheck"></span>
 			</div>
 
 			<div class="form-group col-md-6">
 				<label for="inputPassword4"></label> <input type="text"
 					class="form-control" id="mobile"
-					placeholder="Mobile Number (Ooptional)"> <span
-					class="error_form" id="namecheck"></span>
+					placeholder="Mobile Number (Optional)"> <span
+					class="error_form" id="mobilecheck"></span>
 			</div>
 		</div>
 
@@ -95,18 +95,16 @@ form {
 			$("#namecheck").hide();
 			$("#ageC").hide();
 			$("#addressC").hide();
-			$("#cityC").hide();
-			$("#stateC").hide();
-			$("#countryC").hide();
 			$("#emailC").hide();
+			$("#gendercheck").hide();
+			$("#mobilecheck").hide();
 
 			var errorName = false;
 			var errorAge = false;
 			var errorAddress = false;
-			var errorCity = false;
-			var errorState = false;
-			var errorCountry = false;
 			var errorEmail = false;
+			var errorGender = false;
+			var errorMobile = false;
 
 			$("#firstname").focusout(function() {
 				nameCheck1();
@@ -156,31 +154,53 @@ form {
 					errorAddress = true;
 				}
 			}
-
 			$("#email").focusout(function() {
-				emailC();
+				addressC();
 			});
-			function emailC() {
-				var emails = $("#email").val();
-				if (emails !== '') {
+			function addressC() {
+				var addresss = $("#email").val();
+				if (addresss !== '') {
 					$("#emailC").hide();
 					$("#email").css("border-bottom", "2px solid #34F458");
 				} else {
-					$("#emailC").html("Email should be filled");
+					$("#emailC").html("Enter your email");
 					$("#emailC").show();
 					$("#email").css("border-bottom", "2px solid #F90A0A");
-					errorEmail = true;
+					errorAddress = true;
 				}
 			}
-			$("#btnid").click(function() {
-				var password = $("#password").val();
-				var confirmPassword = $("#cpassword").val();
-				if (password != confirmPassword) {
-					alert("Passwords do not match.");
-					return false;
-				}
-				return true;
+
+			$("#gendercheck").focusout(function() {
+				genderC();
 			});
+			function genderC() {
+				var emails = $("#gender").val();
+				if (emails !== '') {
+					$("#gendercheck").hide();
+					$("#gender").css("border-bottom", "2px solid #34F458");
+				} else {
+					$("#gendercheck").html("Email should be filled");
+					$("#gendercheck").show();
+					$("#gender").css("border-bottom", "2px solid #F90A0A");
+					errorGender = true;
+				}
+			}
+
+			$("#mobilecheck").focusout(function() {
+				mobileC();
+			});
+			function mobileC() {
+				var mobile = $("#mobile").val();
+				if (mobile !== '') {
+					$("#mobilecheck").hide();
+					$("#mobile").css("border-bottom", "2px solid #34F458");
+				} else {
+					$("#mobilecheck").html("Email should be filled");
+					$("#mobilecheck").show();
+					$("#mobile").css("border-bottom", "2px solid #F90A0A");
+					errorMobile = true;
+				}
+			}
 
 			$("#myForm").submit(
 					function() {
@@ -193,6 +213,8 @@ form {
 						ageC();
 						addressC();
 						emailC();
+						genderC();
+						mobileC();
 						if (firstname == false && lastname == false
 								&& ages == false && addresss == false
 								&& countries == false && emails == false) {

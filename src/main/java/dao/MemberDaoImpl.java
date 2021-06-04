@@ -2,6 +2,8 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.Member;
@@ -48,6 +50,38 @@ public class MemberDaoImpl implements MemberDao {
 				System.out.println(e.getMessage());
 			}
 		}
+
+	}
+
+	public List<Member> getDataMembers() {
+		Connection con = DBConnection.getConnection();
+		String sql = "select * from member";
+		List<Member> member = new ArrayList<Member>();
+
+		PreparedStatement st = null;
+		ResultSet res = null;
+
+		try {
+			st = con.prepareStatement(sql);
+			res = st.executeQuery();
+
+			while (res.next()) {
+				String firstname = res.getString("firstname");
+				String lastname = res.getString("lastname");
+				String email = res.getString("email");
+				String address = res.getString("address");
+				String gender = res.getString("gender");
+				String mobile = res.getString("mobile");
+
+				Member m = new Member(firstname, lastname, email, address, gender, mobile);
+				member.add(m);
+
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		return member;
 
 	}
 

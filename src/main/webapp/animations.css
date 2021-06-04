@@ -1,0 +1,87 @@
+.pixel {
+	width: calc(100% - 40px);
+	background-color: #CDEBC4;
+	color: #6D8B64;
+	text-align: center;
+	padding: 30px 0;
+	margin: 0 auto;
+}
+
+.membership {
+	counter-reset: cnt;
+	position: relative;
+	text-align: center;
+	padding: 20px 0;
+	width: 420px;
+	height: 160px;
+	margin: 0 auto;
+}
+
+.membership::before {
+	display: block;
+	content: 'Hover over these items:';
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px;
+}
+
+.membership span {
+	display: inline-block;
+	padding: 2px 6px;
+	background-color: #78CCD2;
+	color: #186C72;
+	border-radius: 4px;
+	margin: 3px;
+	cursor: default;
+}
+
+.membership span::after {
+	counter-increment: cnt;
+	content: " #" counter(cnt);
+	display: inline-block;
+	padding: 4px;
+}
+
+.membership span::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	content: attr(data-title);
+	color: #666;
+	opacity: 0;
+	-webkit-transition: opacity 0.4s;
+	transition: opacity 0.4s;
+}
+
+.membership span:hover::before {
+	opacity: 1;
+}
+
+.space {
+	background:
+		url('https://demo.tutorialzine.com/2013/10/css3-features-you-can-finally-use/assets/img/rocket_big.png')
+		no-repeat center 70px,
+		url('https://demo.tutorialzine.com/2013/10/css3-features-you-can-finally-use/assets/img/space.jpg')
+		no-repeat bottom center;
+	width: 60px;
+	height: 150px;
+	border-radius: 3px;
+	transition: background-position 1s;
+}
+
+.space:hover {
+	background-position: 35% 20px, bottom left;
+}
+
+.para {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.para p {
+	-moz-columns: 3;
+	-webkit-columns: 3;
+	columns: 3;
+}

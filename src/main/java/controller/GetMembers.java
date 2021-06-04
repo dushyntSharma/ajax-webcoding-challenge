@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import dao.MemberDao;
+import dao.MemberDaoImpl;
 import model.Member;
 import utility.DBConnection;
 
@@ -23,6 +25,7 @@ import utility.DBConnection;
  */
 public class GetMembers extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static MemberDao dao = new MemberDaoImpl();
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -31,33 +34,12 @@ public class GetMembers extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Connection con = DBConnection.getConnection();
-		String sql = "select * from member";
-		List<Member> member = new ArrayList<Member>();
-
-		PreparedStatement st = null;
-		ResultSet res = null;
 		PrintWriter out1 = null;
-
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 
 		try {
-			st = con.prepareStatement(sql);
-			res = st.executeQuery();
-
-			while (res.next()) {
-				String firstname = res.getString("firstname");
-				String lastname = res.getString("lastname");
-				String email = res.getString("email");
-				String address = res.getString("address");
-				String gender = res.getString("gender");
-				String mobile = res.getString("mobile");
-
-				Member m = new Member(firstname, lastname, email, address, gender, mobile);
-				member.add(m);
-
-			}
+			List<Member> member = dao.getDataMembers();
 			out1 = response.getWriter();
 			Gson gson = new Gson();
 			String staffJSON = gson.toJson(member);
