@@ -40,6 +40,9 @@ p.red:before {
 		<button type="button" class="btn btn-outline-success">
 			<a href='<c:url value="/animationpage.html"/>'> CSS3 Animations</a>
 		</button>
+		<button type="button" class="btn btn-outline-success">
+			<a href='<c:url value="/jstlinsert.jsp"/>'>JSTL Demo</a>
+		</button>
 	</center>
 
 	<br>
